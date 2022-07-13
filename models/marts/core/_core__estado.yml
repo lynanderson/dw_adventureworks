@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: dim_estado
+    description: '{{ doc("estado") }}'
+    columns:
+
+      - name: codigo_estado
+        description: Código do estado.
+        tests:
+            - not_null
+            - unique
+
+      - name: sigla_estado
+        description: Sigla do estado.
+        tests:
+            - not_null
+            - unique
+
+      - name: sigla_pais
+        description: Sigla do país.
+        tests:
+            - not_null
+
+      - name: nome_estado
+        description: Nome do estado.
+        tests:
+            - not_null
+            - unique
+
+      - name: codigo_territorio
+        description: Código do território.
+
+      - name: data_modificacao
+        description: Data de modificação do registro.

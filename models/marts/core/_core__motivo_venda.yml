@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: dim_motivo_venda
+    description: '{{ doc("motivo_venda") }}'
+    columns:
+
+      - name: codigo_motivo
+        description: Código do motivo.
+        tests:
+            - not_null
+            - unique
+
+      - name: descricao
+        description: Descrição do motivo.
+
+      - name: tipo_motivo
+        description: Tipo do motivo.
+        tests:
+          - accepted_values:
+              values: ['Other','Marketing','Promotion']  
+
+      - name: data_modificacao
+        description: Data de modificação do registro.

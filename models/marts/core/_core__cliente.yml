@@ -1,0 +1,81 @@
+version: 2
+
+models:
+  - name: dim_cliente
+    description: '{{ doc("cliente") }}'
+    columns:
+
+      - name: codigo_cliente
+        description: Código do cliente.
+        tests:
+            - not_null
+
+      - name: codigo_empresa
+        description: Código da empresa.
+        tests:
+            - not_null
+            - relationships:
+                to: ref('stg_empresa')
+                field: codigo_empresa
+
+      - name: titulo
+        description: Informação instrutiva. Se preenchido, chame por Senhor ou Senhora.
+
+      - name: nome
+        description: Nome do cliente.
+        tests:
+            - not_null
+
+      - name: sobrenome
+        description: Sobrenome do cliente.
+
+      - name: sufixo
+        description: Informação do sufixo do cliente.
+
+      - name: endereco
+        description: Rua do cliente.
+
+      - name: endereco_complemento
+        description: Complemento do endereço do cliente.
+
+      - name: codigo_cidade
+        description: Código da cidade do cliente.
+
+      - name: nome_cidade
+        description: Nome da cidade do cliente.
+
+      - name: codigo_estado
+        description: Código do estado do cliente.
+
+      - name: sigla_estado
+        description: Sigla do estado do cliente.
+
+      - name: nome_estado
+        description: Nome do estado do cliente.
+
+      - name: cep
+        description: CEP do cliente.
+
+      - name: sigla_pais
+        description: Sigla do país do cliente.
+
+      - name: nome_pais
+        description: Nome do país do cliente.
+
+      - name: codigo_cartao_credito
+        description: Código do cartão de crédito do cliente.
+
+      - name: tipo_cartao
+        description: Tipo do cartão de crédito do cliente.
+
+      - name: numero_cartao
+        description: Número do cartão de crédito do cliente.
+
+      - name: mes_de_validade
+        description: Mês de validade do cartão de crédito do cliente.
+
+      - name: ano_de_validade
+        description: Ano de validade do cartão de crédito do cliente.
+
+      - name: data_modificacao
+        description: Data de modificação do registro.

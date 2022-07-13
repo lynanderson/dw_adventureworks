@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: dim_pais
+    description: '{{ doc("pais") }}'
+    columns:
+    
+      - name: sigla_pais
+        description: Sigla do país.
+        tests:
+            - not_null
+            - unique
+
+      - name: nome_pais
+        description: Nome do país.
+        tests:
+            - not_null
+            - unique
+
+      - name: data_modificacao
+        description: Data de modificação do registro.

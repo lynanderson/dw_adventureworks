@@ -1,0 +1,110 @@
+version: 2
+
+models:
+  - name: dim_vendedor
+    description: '{{ doc("vendedor") }}'
+    columns:
+
+      - name: codigo_empresa
+        description: Código da empresa do vendedor.
+        tests:
+            - not_null
+            - unique
+
+      - name: tipo_pessoa
+        description: Tipo de pessoa. Informação para identificar se é vendedor, cliente e etc.
+
+      - name: titulo
+        description: Informação instrutiva. Se preenchido, chame por Senhor ou Senhora.
+
+      - name: nome
+        description: Nome do vendedor.
+        tests:
+            - not_null
+
+      - name: sobrenome
+        description: Sobrenome do vendedor.
+
+      - name: sufixo
+        description: Informação do sufixo do vendedor.
+
+      - name: email_promocional
+        description: E-mail promocional.
+
+      - name: data_modificacao
+        description: Data de modificaçãod o registro.
+
+      - name: codigo_nacionalidade
+        description: Código da nacionalidade.
+
+      - name: usuario
+        description: Usuário do vendedor.
+
+      - name: cargo
+        description: Cargo do vendedor.
+
+      - name: data_nascimento
+        description: Data de nascimento do vendedor.
+
+      - name: estado_civil
+        description: Estado civil do vendedor.
+
+      - name: sexo
+        description: Sexo do vendedor.
+
+      - name: data_contratacao
+        description: Data da contratação.
+
+      - name: hora_extra
+        description: Número de horas extras que a pessoa possui.
+
+      - name: hora_licenca_medica
+        description: Número de horas de licença médica que a pessoa possui.
+
+      - name: codigo_territorio
+        description: Código do território.
+
+      - name: meta
+        description: Meta do vendedor.
+
+      - name: bonificacao
+        description: Bonificação por atingir a meta.
+
+      - name: comissao
+        description: Comissão sobre as vendas.
+
+      - name: venda_total
+        description: Valor total vendido.
+
+      - name: venda_ano_passado
+        description: Valor total vendido no ano passado.
+
+      - name: endereco
+        description: Rua do vendedor.
+
+      - name: endereco_complemento
+        description: Complemento do endereço do vendedor.
+
+      - name: codigo_cidade
+        description: Código da cidade do vendedor.
+
+      - name: nome_cidade
+        description: Nome da cidade do vendedor.
+
+      - name: codigo_estado
+        description: Código do estado do vendedor.
+
+      - name: sigla_estado
+        description: Sigla do estado do vendedor.
+
+      - name: nome_estado
+        description: Nome do estado do vendedor.
+
+      - name: cep
+        description: CEP do vendedor.
+
+      - name: sigla_pais
+        description: Sigla do país do vendedor.
+
+      - name: nome_pais
+        description: Nome do país do vendedor.

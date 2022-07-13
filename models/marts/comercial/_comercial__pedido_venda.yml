@@ -1,0 +1,99 @@
+version: 2
+
+models:
+  - name: fct_pedido_venda
+    description: '{{ doc("pedido_venda") }}'
+    columns:
+
+      - name: codigo_pedido
+        description: Código do pedido de venda.
+        tests: 
+            - not_null
+
+      - name: numero_revisao
+        description: Número da revisão do pedido.
+
+      - name: data_emissao
+        description: Data que o pedido foi emitido.
+
+      - name: data_vencimento
+        description: Data de vencimento do pedido.
+
+      - name: data_entrega
+        description: Data prevista de entrega do pedido.
+
+      - name: status_pedido
+        description: Status do pedido. Onde, 1 = Em processo; 2 = Aprovado; 3 = Aguardando; 4 = Rejeitado; 5 = Entregue; 6 = Cancelado.
+
+      - name: numero_pedido_compra
+        description: Número do pedido de compra do cliente.
+
+      - name: numero_conta
+        description: Número da conta bancária do cliente.
+
+      - name: codigo_cliente
+        description: Código do cliente.
+        tests:
+            - not_null
+            
+      - name: codigo_vendedor
+        description: Código do vendedor.
+
+      - name: codigo_territorio
+        description: Código do território.
+
+      - name: codigo_cidade
+        description: Código da cidade do cliente.
+
+      - name: codigo_endereco_entrega
+        description: Código do endereço de entrega.
+
+      - name: codigo_modo_entrega
+        description: Código do modo de entrega.
+
+      - name: codigo_cartao_credito
+        description: Código do cartão de crédito do cliente.
+
+      - name: codigo_aprovacao_cartao
+        description: Código da aprovação do cartão de crédito.
+
+      - name: taxa_cambio
+        description: Taxa de câmbio.
+
+      - name: valor_total_liquido
+        description: Valor total liquido do pedido.
+
+      - name: total_taxa
+        description: Valor total de taxas.
+
+      - name: carga
+        description: Carga do pedido.
+
+      - name: valor_total_bruto
+        description: Valor total bruto.
+
+      - name: codigo_pedido_item
+        description: Código do pedido do item.
+        tests:
+            - not_null
+
+      - name: numero_rastreamento
+        description: Número de rastreamento do pedido.
+
+      - name: qtde_pedida
+        description: Quantidade pedida.
+
+      - name: codigo_produto
+        description: Código do produto.
+
+      - name: codigo_oferta_especial
+        description: Código de oferta especial.
+
+      - name: preco_unitario
+        description: Preço unitário.
+
+      - name: desconto_unitario
+        description: Desconto unitário.
+
+      - name: codigo_motivo
+        description: Código do motivo.

@@ -1,0 +1,81 @@
+version: 2
+
+models:
+  - name: dim_produto
+    description: '{{ doc("produto") }}'
+    columns:
+
+      - name: codigo_produto
+        description: Código do produto.
+        tests:
+            - not_null
+            - unique
+
+      - name: descricao_produto
+        description: Descrição do produto.
+
+      - name: codigo_barra
+        description: Código de barras do produto.
+
+      - name: cor
+        description: Cor do produto.
+
+      - name: estoque_seguranca
+        description: Quantidade do estoque de segurança.
+
+      - name: ponto_pedido
+        description: Quantidade do ponto de pedido.
+
+      - name: custo_padrao
+        description: Custo padrão do produto.
+
+      - name: preco_tabela
+        description: Preço de tabela do produto.
+
+      - name: dimensao_produto
+        description: Dimensão do produto.
+
+      - name: dimensao_unidade_medida
+        description: Unidade de medida da dimensão do produto.
+
+      - name: peso_produto
+        description: Peso do produto.
+
+      - name: peso_unidade_medida
+        description: Unidade de medida do peso do produto.
+
+      - name: dias_para_fabricar
+        description: Quantidade de dias para fabricação do produto.
+
+      - name: linha_produto
+        description: Linha do produto.
+
+      - name: classe_produto
+        description: Classe do produto.
+
+      - name: estilo_produto
+        description: Estilo do produto.
+
+      - name: codigo_categoria
+        description: Código da categoria do produto.
+
+      - name: descricao_categoria
+        description: Descrição da categoria do produto.
+
+      - name: codigo_subcategoria
+        description: Código da subcategoria do produto.
+
+      - name: descricao_subcategoria
+        description: Descrição da subcategoria do produto.
+
+      - name: inicio_venda
+        description: Data de inicio das vendas do produto.
+
+      - name: fim_venda
+        description: Data de fim das vendas do produto.
+
+      - name: data_descontinuacao
+        description: Data de descontinuação do produto.
+
+      - name: data_modificacao
+        description: Data de modificação do registro.

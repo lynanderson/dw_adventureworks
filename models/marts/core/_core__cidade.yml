@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: dim_cidade
+    description: '{{ doc("cidade") }}'
+    columns:
+
+      - name: codigo_cidade
+        description: Código da cidade.
+        tests:
+            - not_null
+            - unique
+
+      - name: endereco
+        description: Nome da rua.
+
+      - name: endereco_complemento
+        description: Complemento do endereço.
+
+      - name: nome_cidade
+        description: Nome da cidade.
+
+      - name: codigo_estado
+        description: Código do estado.
+        tests:
+            - not_null
+
+      - name: cep
+        description: Númerod o CEP.
+
+      - name: data_modificacao
+        description: Data de modificação do registro.

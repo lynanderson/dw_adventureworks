@@ -1,0 +1,12 @@
+
+
+  create or replace view `dw-adventureworks-354222`.`dbt_lynanderson`.`stg_capa_pedido_venda_motivo`
+  OPTIONS()
+  as 
+
+SELECT
+         cast(salesorderid AS int) AS codigo_pedido
+       , cast(salesreasonid AS int) AS codigo_motivo
+       , cast(modifieddate AS date) AS data_modificacao  
+FROM `dw-adventureworks-354222`.`raw_adventureworks`.`sales_sales_order_header_sales_reason`;
+

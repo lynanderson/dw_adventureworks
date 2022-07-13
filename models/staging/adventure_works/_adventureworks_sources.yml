@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: raw_adventureworks
+    tables:
+      - name: humanresources_employee
+      - name: person_address
+      - name: person_country_region
+      - name: person_person
+      - name: person_business_entity
+      - name: person_business_entity_address
+      - name: person_business_entity_contact
+      - name: person_state_province
+      - name: production_product
+      - name: production_product_category
+      - name: production_product_subcategory
+      - name: sales_customer
+      - name: sales_sales_order_detail
+      - name: sales_sales_order_header
+      - name: sales_sales_order_header_sales_reason
+      - name: sales_sales_person
+      - name: sales_sales_reason
+      - name: sales_person_credit_card
+      - name: sales_credit_card
