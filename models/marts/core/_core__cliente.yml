@@ -18,18 +18,18 @@ models:
                 to: ref('stg_empresa')
                 field: codigo_empresa
 
-      - name: titulo
+      - name: titulo_cliente
         description: Informação instrutiva. Se preenchido, chame por Senhor ou Senhora.
 
-      - name: nome
+      - name: nome_cliente
         description: Nome do cliente.
         tests:
             - not_null
 
-      - name: sobrenome
+      - name: sobrenome_cliente
         description: Sobrenome do cliente.
 
-      - name: sufixo
+      - name: sufixo_cliente
         description: Informação do sufixo do cliente.
 
       - name: endereco

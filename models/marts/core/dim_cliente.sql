@@ -48,7 +48,9 @@ SELECT
        , stg_pessoa.sufixo AS sufixo_cliente
        , stg_empresa_endereco.codigo_cidade
        , stg_cartao_credito_pessoa.codigo_cartao_credito
-       , stg_cartao_credito.tipo_cartao
+       , CASE WHEN stg_cartao_credito.tipo_cartao IS NULL THEN 'Indefinido'
+              ELSE stg_cartao_credito.tipo_cartao
+         END AS tipo_cartao
        , stg_cartao_credito.numero_cartao
        , stg_cartao_credito.mes_de_validade
        , stg_cartao_credito.ano_de_validade

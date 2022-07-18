@@ -4,7 +4,9 @@ SELECT
          cast(productid AS int) AS codigo_produto
        , trim(name) AS descricao_produto
        , trim(productnumber) AS codigo_barra
-       , trim(color) AS cor
+       , CASE WHEN trim(color) IS NULL THEN 'Incolor'
+              ELSE trim(color)
+         END AS cor
        , cast(safetystocklevel AS int) AS estoque_seguranca
        , cast(reorderpoint AS int) AS ponto_pedido
        , cast(standardcost AS numeric) AS custo_padrao

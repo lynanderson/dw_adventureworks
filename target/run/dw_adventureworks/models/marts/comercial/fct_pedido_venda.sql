@@ -1,8 +1,11 @@
 
 
-  create or replace view `dw-adventureworks-354222`.`dbt_lynanderson`.`fct_pedido_venda`
+  create or replace table `dw-adventureworks-354222`.`dbt_lynanderson`.`fct_pedido_venda`
+  
+  
   OPTIONS()
-  as 
+  as (
+    
 
 WITH stg_capa_pedido_venda AS (
     SELECT
@@ -56,5 +59,6 @@ FROM stg_capa_pedido_venda
 JOIN stg_item_pedido_venda
     ON stg_item_pedido_venda.codigo_pedido = stg_capa_pedido_venda.codigo_pedido
 LEFT JOIN stg_capa_pedido_venda_motivo
-    ON stg_capa_pedido_venda_motivo.codigo_pedido = stg_capa_pedido_venda.codigo_pedido;
-
+    ON stg_capa_pedido_venda_motivo.codigo_pedido = stg_capa_pedido_venda.codigo_pedido
+  );
+  

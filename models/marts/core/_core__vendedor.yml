@@ -14,18 +14,18 @@ models:
       - name: tipo_pessoa
         description: Tipo de pessoa. Informação para identificar se é vendedor, cliente e etc.
 
-      - name: titulo
+      - name: titulo_vendedor
         description: Informação instrutiva. Se preenchido, chame por Senhor ou Senhora.
 
-      - name: nome
+      - name: nome_vendedor
         description: Nome do vendedor.
         tests:
             - not_null
 
-      - name: sobrenome
+      - name: sobrenome_vendedor
         description: Sobrenome do vendedor.
 
-      - name: sufixo
+      - name: sufixo_vendedor
         description: Informação do sufixo do vendedor.
 
       - name: email_promocional

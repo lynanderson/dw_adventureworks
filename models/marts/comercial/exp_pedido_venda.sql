@@ -94,6 +94,7 @@ SELECT
        , fct_pedido_venda.preco_unitario
        , fct_pedido_venda.desconto_unitario
        , dim_cliente.titulo_cliente
+       , dim_cliente.codigo_cliente
        , dim_cliente.nome_cliente
        , dim_cliente.sobrenome_cliente
        , dim_cliente.sufixo_cliente
@@ -101,7 +102,9 @@ SELECT
        , dim_cliente.numero_cartao
        , dim_cliente.mes_de_validade
        , dim_cliente.ano_de_validade
-       , dim_vendedor.nome_vendedor
+       , CASE WHEN dim_vendedor.nome_vendedor IS NULL THEN 'Sem Vendedor'
+              ELSE dim_vendedor.nome_vendedor
+         END AS nome_vendedor
        , dim_vendedor.sobrenome_vendedor
        , dim_vendedor.titulo_vendedor
        , dim_vendedor.sufixo_vendedor
@@ -139,8 +142,12 @@ SELECT
        , estado_cliente.nome_estado AS nome_estado_cliente
        , pais_cliente.sigla_pais AS sigla_pais_cliente
        , pais_cliente.nome_pais AS nome_pais_cliente
-       , dim_motivo_venda.descricao_motivo
-       , dim_motivo_venda.tipo_motivo
+       , CASE WHEN dim_motivo_venda.descricao_motivo IS NULL THEN 'Indefinido'
+              ELSE dim_motivo_venda.descricao_motivo
+         END AS descricao_motivo
+       , CASE WHEN dim_motivo_venda.tipo_motivo IS NULL THEN 'Indefinido'
+              ELSE dim_motivo_venda.tipo_motivo
+         END AS tipo_motivo
 FROM fct_pedido_venda
 LEFT JOIN dim_cliente
     ON dim_cliente.codigo_cliente = fct_pedido_venda.codigo_cliente
@@ -205,6 +212,7 @@ GROUP BY
        , fct_pedido_venda.preco_unitario
        , fct_pedido_venda.desconto_unitario
        , dim_cliente.titulo_cliente
+       , dim_cliente.codigo_cliente
        , dim_cliente.nome_cliente
        , dim_cliente.sobrenome_cliente
        , dim_cliente.sufixo_cliente
